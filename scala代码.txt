@@ -1,0 +1,20 @@
+3.
+import scala.io.Source
+val inputFile = Source.fromFile("location-sample.txt")
+val lines = inputFile.getLines
+val t=for(line <- lines ) yield line.split(",")(3)
+val tt=t.toSet
+for(i <- tt){
+	println(i)
+}
+4.
+import scala.io.Source
+def phoneLoc(num:String) = {
+	val inputFile = Source.fromFile("location.txt")
+	val lines = inputFile.getLines
+	for(line <- lines ) {
+		if(line.contains(num)){
+			println(line.split(",")(1)+"来自"+line.split(",")(2)+","+line.split(",")(3)+","+line.split(",")(4))
+		}
+	}
+}
